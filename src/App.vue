@@ -1,4 +1,5 @@
 <template>
+  <BaseNavigation></BaseNavigation>
   <nav>
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
@@ -6,11 +7,24 @@
   <router-view />
 </template>
 
+<script lang="ts">
+import Vue from "vue";
+import { Component } from "vue-class-component";
+import BaseNavigation from "@/components/BaseNavigation.vue";
+
+@Component({
+  components: { BaseNavigation },
+})
+export default class App extends Vue {}
+</script>
+
 <style lang="scss" global>
 @import "@/scss/_colors.scss";
+
 body {
   background-color: $color-primary;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
