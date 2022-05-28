@@ -1,18 +1,13 @@
 <template>
   <BaseNavigation></BaseNavigation>
-  <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view />
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { Component } from "vue-class-component";
+import { Vue, Options } from "vue-class-component";
 import BaseNavigation from "@/components/BaseNavigation.vue";
 
-@Component({
+@Options({
   components: { BaseNavigation },
 })
 export default class App extends Vue {}
